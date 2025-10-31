@@ -2,6 +2,7 @@
 #Flashcarddata1 sheet BIOLOGY
 import pandas as pd
 import random
+##Alex
 
 def rand_ques():
     df = pd.read_excel('Flashcardsdata1.xlsx', sheet_name='BIOLOGY')
@@ -23,4 +24,5 @@ rand_ques()
 ########
 #hier I shoul know how to return the row number 
 # to use it in the answer mod2_cmp_answer
+
  
