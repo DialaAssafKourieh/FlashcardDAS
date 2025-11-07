@@ -4,6 +4,7 @@
 #After each quiz, the user will be asked whether they want to move to another category or end the quiz. Each time, 
 # the program will display the user’s score and the number of questions answered.
 ####Diala
+import Random_question
 def main():
     Biology=1
     Geography=2
@@ -13,15 +14,16 @@ def main():
     ques=input('Are you ready to play Flash Cards quizz? press  Y or N :')
     if ques.lower() == 'y':
         print ('You have to choose one of the categories or end the game.')
-        print ('For Biology tap 1')
-        print ('For Geography tap 2')
-        print ('For History tap 3')
-        print ('To Exit tap 4')
+        print (' For Biology tap 1')
+        print (' For Geography tap 2')
+        print (' For History tap 3')
+        print (' To Exit tap 4')
         #handle the error
         cat=int(input('Choose the category :'))
         #we should discuss each category
         if cat==1:
             print('you have 7 question in biology')
+            Random_question 
         #category is Biology we should ask him 7 random questions
         #  and show the score after each question
         elif cat==2:
