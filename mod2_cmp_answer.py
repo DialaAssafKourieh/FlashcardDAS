@@ -1,8 +1,8 @@
 #we will find the cooect answer that related to the random
 #question
 import pandas as pd
-df = pd.read_excel('Flashcardsdata1.xlsx', sheet_name='BIOLOGY')
-for i in range(2):
+df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name='Biology')
+for i in range(7):
     random_row = df.sample(n=1)
     q = random_row['Questions'].values[0]
     a = random_row['Answers'].values[0]
