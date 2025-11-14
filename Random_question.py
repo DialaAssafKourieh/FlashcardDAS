@@ -3,8 +3,9 @@ import random
 
 def rand_ques():
     # Load the Excel sheet once
-    df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name='Biology')
-    
+    sheet_to_read = "Geography"
+    df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name=sheet_to_read)
+    #sheet_name=['Biology','Geography','History1'])
     # Select 7 random rows without repetition
     random_rows = df.sample(n=7, replace=False)
     
@@ -16,6 +17,7 @@ def rand_ques():
         correct_answer = row['Answers']
 
         print(f"\nQuestion {count+1}: {question}")
+
         #removes any extra whitespace at the start and end of the string.
         answer = input("Enter your answer: ").strip()
 

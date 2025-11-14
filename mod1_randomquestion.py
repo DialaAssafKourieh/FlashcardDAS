@@ -6,7 +6,7 @@ import random
 def rand_ques():
     score=0
     for count in range(7):
-      df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name='Biology')
+      df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name='Geography')
       #choose a random question , use sample avoiding repetition
       random_row = df.sample(n=1)
       random_ques = df.iloc[random_row, 0]

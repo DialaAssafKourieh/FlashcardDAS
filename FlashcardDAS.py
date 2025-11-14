@@ -4,6 +4,7 @@
 #After each quiz, the user will be asked whether they want to move to another category or end the quiz. Each time, 
 # the program will display the user’s score and the number of questions answered.
 ####Diala
+import Random_question as Rq
 def main():
     Biology=1
     Geography=2
@@ -22,6 +23,7 @@ def main():
         #we should discuss each category
         if cat==1:
             print('you have 7 question in biology')
+            Rq.rand_ques()
         #category is Biology we should ask him 7 random questions
         #  and show the score after each question
         elif cat==2:
