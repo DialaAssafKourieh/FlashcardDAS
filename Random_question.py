@@ -1,24 +1,34 @@
+'''The modoul Random_question is a module that choose the 
+   random question from excel file FlaschcardDAS.xlsx. 
+   we call it from the main program  Rq.rand_ques(sheetname) where sheetname 
+   in excel file that contains the category'''
+
+#panda helps to handle data
 import pandas as pd
 import random
 
+#define the function that is called from the main program for the argument Biology
 def rand_ques(sheet_to_read='Biology'):
     # Load the Excel sheet once
-    # sheet_to_read ="History1"
+    #function read_excel from panda can read the sheet that is assigned in shee_to_read
     df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name=sheet_to_read)
 
     #sheet_name=['Biology','Geography','History1'])
-    # Select 7 random rows without repetition
+    # Select 7 random rows without repetition using sample function repace =falce not to repeat
     random_rows = df.sample(n=7, replace=False)
     score = 0
     count = 0
-#iterrows() function lets you loop over each row in the DataFrame.
+    
+#iterate over the rows of a DataFrame as (index, Series) pairs
+    
     for index, row in random_rows.iterrows():
         question = row["Questions"]
         correct_answer = row["Answers"] 
-
+       
+        #print the question
         print(f"\n Question {count+1}: {question}")
 
-            #removes any extra whitespace at the start and end of the string.
+        #removes any extra whitespace at the start and end of the string.
         answer = input("Enter your answer: ").strip()
 
         # Case-insensitive comparison
