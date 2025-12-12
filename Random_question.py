@@ -45,7 +45,7 @@ def rand_ques(sheet_to_read='Biology'):
 
             print(f"\nQuiz completed! Your final score is {score}/7.")
    except FileNotFoundError:
-       print('Error The File Flashcards.xlsx is not fount.Make sure the it exist')        
+       print('Error The File Flashcards.xlsx is not fount.Make sure the file e it exist')        
        return
 # Run the quiz
 if __name__ == '__main__':
