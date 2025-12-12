@@ -5,7 +5,7 @@ After completing the quiz, the user will be asked whether the  want to move to a
 or end the quiz. Each time, the program will display the user’s score and the number of 
 questions answered.'''
 
-#🛬🐼Import Random_question module that choose the question from each category randomly
+#🛬Import Random_question module that choose the question from each category randomly
 import Random_question as Rq
 #🤷‍♀️Define new type of error called InvalidCategoryErro
 class InvalidCategoryError(Exception):
@@ -43,12 +43,14 @@ def main():
         print ('4• 🙋  To Exit tap 4')
         
         #create a loop while the answer is y
+        
         while True: 
               try:   
                     cat=int(input('🔢Choose the category (1-4) :')) 
                     if cat not in (1, 2, 3, 4) :
                         #raise an error in case the category is a number but not in the range 1--4
-                        raise InvalidCategoryError("🔢Category must be between 1 and 4! ")
+                       raise InvalidCategoryError("🔢Category must be between 1 and 4! ")
+                       #print("🔢Category must be between 1 and 4! ")
                     break 
               except ValueError:
                         print('Invalid input, you must entre a number from 1 to 4 🔢.')

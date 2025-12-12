@@ -11,18 +11,22 @@ file_path=('FlashcardsDAS.xlsx')
 #define the function that is called from the main program for the argument Biology
 def rand_ques(sheet_to_read='Biology'):
    try:
-       df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name=sheet_to_read)
+     if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"The file '{file_path}' does not exist.")
+        # Load the Excel sheet once
+        #function read_excel from panda can read the sheet that is assigned in shee_to_read
+   except:
+          df = pd.read_excel('FlashcardsDAS.xlsx', sheet_name=sheet_to_read)
 
         #sheet_name=['Biology','Geography','History1'])
         # Select 7 random rows without repetition using sample function repace =falce not to repeat
-    
-       random_rows = df.sample(n=7, replace=False)
-       score = 0
-       count = 0
+          random_rows = df.sample(n=7, replace=False)
+          score = 0
+          count = 0
 
         #iterate over the rows of a DataFrame as (index, Series) pairs
 
-       for index, row in random_rows.iterrows():
+          for index, row in random_rows.iterrows():
             question = row["Questions"]
             correct_answer = row["Answers"] 
 
@@ -43,10 +47,8 @@ def rand_ques(sheet_to_read='Biology'):
             count += 1
             print(f"Progress: {count}/7 | Current Score: {score}")
 
-            print(f"\nQuiz completed! Your final score is {score}/7.")
-   except FileNotFoundError:
-       print('Error The File Flashcards.xlsx is not fount.Make sure the it exist')        
-       return
+          print(f"\nQuiz completed! Your final score is {score}/7.")
+
 # Run the quiz
 if __name__ == '__main__':
     rand_ques()
