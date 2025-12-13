@@ -25,8 +25,7 @@ The user can then choose to continue with another category or exit the program.
 
 
 ## Program Flow:
-
-  Flashcards Program Flowchart (images/Flashcards_Flowchart.png)
+- Flashlashcards Program Flowchart (images/Flashcards_Flowchart.png)
 
 
 ## Repository Structure
@@ -55,7 +54,6 @@ Each sheet must contain **two columns**:
 | How many bones does an adult human body have? | 206 |
 | Which animal has three hearts? | octopus |
 
----
 
 ## Requirements
 - Python **3.8 or higher**
@@ -68,16 +66,11 @@ Install dependencies using:
 pip install pandas openpyxl
 openpyxl is required because pandas uses it as an engine to read .xlsx Excel files.
 
-▶ How to Run the Program
+## How to Run the Program
 Make sure all files are in the same directory.
+Run the main program:python FlashcardsDAS.py
 
-
-Run the main program:
-
-python FlashcardsDAS.py
-
- Example Usage
-
+##Example Usage:
 Are you ready to play the Flashcards quiz? Enter Y or N : Y
 
 Choose a category:
@@ -96,50 +89,33 @@ Enter your answer: skin
 Progress: 1/7 | Current Score: 1
 
 
-⚠️ Error Handling
+## Error Handling
 Invalid category numbers trigger a custom exception (InvalidCategoryError)
-
 Non-numeric input is handled with try/except (ValueError)
-
 Missing Excel file raises a clear error message (FileNotFoundError)
-
-
 
 ## Random Question Module
 The module Random_question.py:
-
 Reads quiz data from FlashcardsDAS.xlsx
-
 Selects 7 random questions using DataFrame.sample()
-
 Displays questions and checks answers
-
 Tracks and displays score and progress
+It is called from the main program using:Rq.rand_ques(sheetname)
 
-It is called from the main program using:
-
-Rq.rand_ques(sheetname)
-
-
-👩‍💻👨‍💻 Authors
+## Authors
 This program was created by:
-
 Diala Assaf Kourieh
-
 Alexandros Seisoglou
-
 Shaymaa Zaiter
 
- Purpose
+## Purpose
 This project was developed for educational purposes, demonstrating:
-
 Modular programming in Python
-
 Random selection of data
-
 Exception handling
+User interaction
 
-User interaction 
+The End.
 
 
 
