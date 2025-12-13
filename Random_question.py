@@ -6,7 +6,7 @@
 # panda is a python library that helps us to read the excel file
 import pandas as pd
 import random
-import os
+#import os
 file_path=('FlashcardsDAS.xlsx')
 # define the function that is called in the main program for the argument Biology
 def rand_ques(sheet_to_read='Biology'):
