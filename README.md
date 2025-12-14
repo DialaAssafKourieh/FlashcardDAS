@@ -1,5 +1,5 @@
 🎴 FlashcardsDAS – Flashcard Quiz Program
-Description
+## Description
 FlashcardsDAS is a Python-based console quiz application that presents users with a random set of seven flashcard questions from an Excel file.
 
 The user is first asked whether they want to play the flashcard quiz. If they choose to continue, they can select one of three categories: - Biology - Geography - History
