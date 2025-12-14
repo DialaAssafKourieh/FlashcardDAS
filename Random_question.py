@@ -26,7 +26,7 @@ def rand_ques(sheet_to_read='Biology'):
                 correct_answer = row["Answers"] 
 
                 # print the question
-                print(f"\n Question {count+1}: {question}")
+                print(f"\nQuestion {count+1}: {question}")
 
                 # removes any extra white space at the start and end of the string.
                 answer = input("Enter your answer: ").strip()
@@ -40,7 +40,7 @@ def rand_ques(sheet_to_read='Biology'):
 
                 count += 1
                 print(f"Progress: {count}/7 | Current Score: {score}")
-        print(f"\nQuiz completed.Your final score is {score}/7.")    
+        print(f"\nQuiz completed. Your final score is {score}/7.")    
         
      except FileNotFoundError:
         print('Error The File Flashcards.xlsx is not found. Make sure the file exists.')        
