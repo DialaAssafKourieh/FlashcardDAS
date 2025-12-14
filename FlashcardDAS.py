@@ -39,8 +39,8 @@ def main():
         print ('Choose a category or exit the game.')
         print ('1• 🧠  Biology')
         print ('2• 🏝️  Geography')
-        print ('3• 📗  History ')
-        print ('4• 🙋  To Exit enter 4')
+        print ('3• 📗  History')
+        print ('4• 🙋  To Exit')
         
         # create a loop that runs while the answer is y
         
