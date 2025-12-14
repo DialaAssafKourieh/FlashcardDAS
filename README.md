@@ -1,34 +1,18 @@
-# 🎴 FlashcardsDAS – Flashcard Quiz Program
+🎴 FlashcardsDAS – Flashcard Quiz Program
+Description
+FlashcardsDAS is a Python-based console quiz application that presents users with a random set of seven flashcard questions from an Excel file.
 
-## Description
-**FlashcardsDAS** is a Python-based console quiz application that presents users with
- a **random set of seven (7) flashcard questions** from an Excel file.
+The user is first asked whether they want to play the flashcard quiz. If they choose to continue, they can select one of three categories: - Biology - Geography - History
 
-The user will be asked if he want to play Flashcards.
-The user can choose between three categories:
-- 🧠 Biology
-- 🏝️ Geography
-- 📗 History
+After completing a quiz round, the program displays the user’s score and the number of questions answered. The user can then choose another category or exit the program.
 
-After completing each quiz, the program displays:
-- The user’s **score**
-- The **number of questions answered**
+How It Works
+Questions and answers are stored in an Excel file named FlashcardsDAS.xlsx. A separate module, Random_question.py, selects seven random questions from the chosen category. Answers are checked case-insensitively, and the current score and progress are shown after each question.
 
-The user can then choose to continue with another category or exit the program.
+Program Flow
+A visual overview of the program logic is provided in the flowchart: images/Flashcards_Flowchart.png
 
-
-## How It Works
-- Questions and answers are stored in an Excel file (FlashcardsDAS.xlsx)
-- A separate module (Random_question.py) selects **7 random questions** from the chosen category
-- Answers are checked **case-insensitively**
-- Scores and progress are displayed after each question
-
-
-## Program Flow:
-- Flashlashcards Program Flowchart (images/Flashcards_Flowchart.png)
-
-
-## Repository Structure
+Repository Structure
 FlashcardsDAS/
 │
 ├── images/
@@ -36,90 +20,69 @@ FlashcardsDAS/
 ├── FlashcardsDAS.py
 ├── Random_question.py
 ├── FlashcardsDAS.xlsx
+├── requirements.txt
 └── README.md
+Excel File Format
+The Excel file FlashcardsDAS.xlsx contains one sheet per category: - Biology - Geography - History1 (named this way because "History" is reserved as a sheet name in Excel)
 
+Each sheet has two columns:
 
+Questions	Answers
+What is the largest organ in the human body?	skin
+How many bones does an adult human body have?	206
+Which animal has three hearts?	octopus
+Requirements
+Python 3.8 or higher is required.
 
-## Excel File Format
-The Excel file **FlashcardsDAS.xlsx** contains separate sheets for each category:
-- Biology
-- Geography
-- History1 (name it History1 because in Excel History for sheet name is reserved)
+The program depends on the following Python libraries: - pandas - openpyxl
 
-Each sheet must contain **two columns**:
+openpyxl is required because pandas uses it internally to read .xlsx Excel files.
 
-| Questions | Answers |
-|----------|---------|
-| What is the largest organ in the human body? | skin |
-| How many bones does an adult human body have? | 206 |
-| Which animal has three hearts? | octopus |
+Installing Dependencies (Recommended Method)
+Python packages are installed per Python environment, not per IDE. Regardless of whether the program is run from PyCharm, VS Code, or a terminal, dependencies should be installed via Python itself.
 
+All required packages are listed in requirements.txt. To install them, open a terminal in the project directory and run:
 
-## Requirements
-- Python **3.8 or higher**
-- Required Python libraries:
-  - `pandas`
-  - `openpyxl`
+python -m pip install -r requirements.txt
+If python does not work on your system, try:
 
-Install dependencies using:
-```bash
-pip install pandas openpyxl
-openpyxl is required because pandas uses it as an engine to read .xlsx Excel files.
+python3 -m pip install -r requirements.txt
+This ensures that the packages are installed into the same Python environment that runs the program.
 
-## How to Run the Program
-Make sure all files are in the same directory.
-Run the main program:python FlashcardsDAS.py
+How to Run the Program
+Make sure all files are located in the same directory. Then run:
 
-##Example Usage:
+python FlashcardsDAS.py
+or, if required:
+
+python3 FlashcardsDAS.py
+Example Usage
 Are you ready to play the Flashcards quiz? Enter Y or N : Y
 
 Choose a category:
-1• Biology
-2• Geography
-3• History
-4• Exit
+1 • Biology
+2 • Geography
+3 • History
+4 • Exit
 
-Choose a category (1-4): 1
-You have 7 questions in Biology 🧠
+Choose a category (1–4): 1
+You have 7 questions in Biology
 
 Question 1: What is the largest organ in the human body?
 Enter your answer: skin
-✅ Correct answer.
+Correct answer.
 
 Progress: 1/7 | Current Score: 1
+Error Handling
+The program includes basic error handling: - Invalid category numbers trigger a custom InvalidCategoryError - Non-numeric input is handled using try/except (ValueError) - A missing Excel file raises a clear FileNotFoundError
 
+Random Question Module
+The module Random_question.py: - Reads quiz data from FlashcardsDAS.xlsx - Selects seven random questions using DataFrame.sample() - Displays questions and checks answers - Tracks and displays score and progress
 
-## Error Handling
-Invalid category numbers trigger a custom exception (InvalidCategoryError)
-Non-numeric input is handled with try/except (ValueError)
-Missing Excel file raises a clear error message (FileNotFoundError)
+It is called from the main program using Rq.rand_ques(sheetname).
 
-## Random Question Module
-The module Random_question.py:
-Reads quiz data from FlashcardsDAS.xlsx
-Selects 7 random questions using DataFrame.sample()
-Displays questions and checks answers
-Tracks and displays score and progress
-It is called from the main program using:Rq.rand_ques(sheetname)
+Authors
+This program was created by: - Diala Assaf Kourieh - Alexandros Seisoglou - Shaymaa Zaiter
 
-## Authors
-This program was created by:
-Diala Assaf Kourieh
-Alexandros Seisoglou
-Shaymaa Zaiter
-
-## Purpose
-This project was developed for educational purposes, demonstrating:
-Modular programming in Python
-Random selection of data
-Exception handling
-User interaction
-
-The End.
-
-
-
-
-
-
-
+Purpose
+This project was developed for educational purposes to demonstrate modular programming in Python, random data selection, exception handling, and basic user interaction.
